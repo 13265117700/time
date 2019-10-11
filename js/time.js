@@ -22,6 +22,7 @@ const PAGE = {
   countIime:function(){
     let clock = PAGE.data.clock;
     if(clock){
+      PAGE.addBtn()
       PAGE.data.clock = false;
       let time = setInterval(function(){
         PAGE.data.time -= 1;
