@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.page-head{
+  text-align: center;
+}
+.count-time{
+  width: 90px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  text-align: center;
+  color: #35b558;;
+}
+.page-mainer{
+  width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+}
+.count-number{
+  font-size: 83px;
+  color: #35b558;
+}
+.page-foot{
+  text-align: center;
+}
+.count-btn{
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  background-color: #35b558;
+  border: 0;
+  color: #fff;
+  outline: none;
+}
