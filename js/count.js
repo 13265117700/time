@@ -38,6 +38,10 @@ const PAGE = {
   //     PAGE.addBtn()
   //     PAGE.data.clock = false;
   //     let time = setInterval(function(){
+
+
+
+  
   //       PAGE.data.time -= 1;
   //       let countTime = document.getElementById('count-time');
   //       countTime.value = PAGE.data.time + '秒';
@@ -55,25 +59,40 @@ const PAGE = {
   //     PAGE.addBtn()
   //   }
   // }
-
+  countDown: function() {
+    let time = setInterval(function(){
+      PAGE.data.time -= 1;
+      countTime.value = PAGE.data.time + '秒';
+      if(PAGE.data.time == 0){
+        PAGE.data.clock = false;
+        clearTimeout(time);
+        alert("时间到");
+        PAGE.data.index = 0;
+        PAGE.data.time =30;
+        let countNumber = document.getElementById('count-number');
+        countNumber.innerText = PAGE.data.index;
+      }
+    }, 1000);
+  },
   countTime:function(){
     let countTime = document.getElementById('count-time');
     if(!PAGE.data.clock){
       PAGE.addBtn()
       PAGE.data.clock = true;
-      let time = setInterval(function(){
-        PAGE.data.time -= 1;
-        countTime.value = PAGE.data.time + '秒';
-        if(PAGE.data.time == 0){
-          PAGE.data.clock = false;
-          clearTimeout(time);
-          alert("时间到");
-          PAGE.data.index = 0;
-          PAGE.data.time =30;
-          let countNumber = document.getElementById('count-number');
-          countNumber.innerText = PAGE.data.index;
-        }
-      }, 1000);
+      PAGE.countDown();
+      // let time = setInterval(function(){
+      //   PAGE.data.time -= 1;
+      //   countTime.value = PAGE.data.time + '秒';
+      //   if(PAGE.data.time == 0){
+      //     PAGE.data.clock = false;
+      //     clearTimeout(time);
+      //     alert("时间到");
+      //     PAGE.data.index = 0;
+      //     PAGE.data.time =30;
+      //     let countNumber = document.getElementById('count-number');
+      //     countNumber.innerText = PAGE.data.index;
+      //   }
+      // }, 1000);
     }else{
       PAGE.addBtn()
     }
