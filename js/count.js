@@ -38,10 +38,6 @@ const PAGE = {
   //     PAGE.addBtn()
   //     PAGE.data.clock = false;
   //     let time = setInterval(function(){
-
-
-
-  
   //       PAGE.data.time -= 1;
   //       let countTime = document.getElementById('count-time');
   //       countTime.value = PAGE.data.time + '秒';
@@ -60,6 +56,7 @@ const PAGE = {
   //   }
   // }
   countDown: function() {
+    let countTime = document.getElementById('count-time');
     let time = setInterval(function(){
       PAGE.data.time -= 1;
       countTime.value = PAGE.data.time + '秒';
@@ -75,7 +72,6 @@ const PAGE = {
     }, 1000);
   },
   countTime:function(){
-    let countTime = document.getElementById('count-time');
     if(!PAGE.data.clock){
       PAGE.addBtn()
       PAGE.data.clock = true;
